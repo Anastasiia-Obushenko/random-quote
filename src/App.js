@@ -3,7 +3,7 @@ import Card from './components/Card';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-indigo-500 min-h-screen">
       <Card />
     </div>
   );
