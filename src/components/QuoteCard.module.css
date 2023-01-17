@@ -1,3 +1,11 @@
+@keyframes fadeIn {
+   0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
 .card {
     position: relative;
     width: 80%;
@@ -7,13 +15,20 @@
     background: white;
     align-items: center;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.5s ease-in;
+    animation: fadeIn ease 4s;
 }
+
 .text {
     font-weight: 400;
     font-size: 15px;
+    transition: 0.5s ease-in;
+
 }
 .author {
     font-weight: 500;
+    transition: 0.5s ease-in;
+
 }
 .button {
     font-family: "EB Garamond", serif;
@@ -46,7 +61,10 @@
         padding: 40px 50px;
     }
     .text {
-        font-size: 20px;
+        font-size: 24px;
+    }
+    .author {
+        font-size: 16px;
     }
 }
 @media only screen and (min-width: 1440px) {
