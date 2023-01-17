@@ -37,9 +37,9 @@ function QuoteCard() {
   return (
     <>
       <div className={styles.card}>
-        <div>{quote.text}</div>
-        <div>{quote.author}</div>
-        <button onClick={() => setNumber(random(0, quotesArr.length))}>Click</button>
+        <div className={styles.text}>{quote.text}</div>
+        <div className={styles.author}>{quote.author}</div>
+        <button className={styles.button} onClick={() => setNumber(random(0, quotesArr.length))}>Click</button>
       </div>
     </>
   );
