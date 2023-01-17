@@ -2,18 +2,17 @@ import React from 'react';
 import styles from './QuoteCard.module.css';
 import { useState, useEffect } from 'react';
 
+const colors = ['#f7e3df', '#f2d7c9', '#e1ab99', '#deb5b3', '#9d7a73'];
+
 
 function QuoteCard() {
   const [quote, setQuote] = useState([]);
   const [quotesArr, setQuotesArr] = useState([]);
-  const [number, setNumber] = useState(0);
+  const [color, setColor] = useState(colors[0]);
 
   function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  useEffect(() => {
-    setQuote(quotesArr[number]);
-  }, [number]);
 
   useEffect(() => {
     const quoteFetch = async () => {
@@ -28,18 +27,26 @@ function QuoteCard() {
         ).json();
         localStorage.setItem('quotes', JSON.stringify(quotes));
       }
-      setNumber(random(0, quotesArr.length));
-      setQuote(quotesArr[number]);
+      setColor(colors[random(0, colors.length - 1)]);
+      setQuote(quotesArr[random(0, quotesArr.length - 1)]);
+
     };
     quoteFetch();
   }, []);
 
+  function clickHandle() {
+    setQuote(quotesArr[random(0, quotesArr.length - 1)]);
+    setColor(colors[random(0, colors.length - 1)]);
+
+  }
+
+
   return (
     <>
-      <div className={styles.card}>
+      <div className={styles.card} style={{ backgroundColor: color }}>
         <div className={styles.text}>{quote.text}</div>
         <div className={styles.author}>{quote.author}</div>
-        <button className={styles.button} onClick={() => setNumber(random(0, quotesArr.length))}>Click</button>
+        <button className={styles.button} onClick={() => clickHandle()}>New quote</button>
       </div>
     </>
   );

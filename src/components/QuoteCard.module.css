@@ -6,7 +6,7 @@
     flex-direction: column;
     background: white;
     align-items: center;
-    /* justify-content: center; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .text {
     font-weight: 400;
@@ -16,15 +16,16 @@
     font-weight: 500;
 }
 .button {
-  font-family: "EB Garamond", serif;
-
-    background: #000;
+    font-family: "EB Garamond", serif;
+    background: #4c3f3c;
     color: aliceblue;
     padding: 5px 10px;
     border-radius: 0.5rem;
     margin: 10px;
-    width: 25%;
     align-self: center;
+    white-space: nowrap;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 @media only screen and (min-width: 768px) {
     .card {
@@ -32,7 +33,7 @@
         padding: 30px 40px;
         align-items: normal;
     }
-    .text{
+    .text {
         font-size: 20px;
     }
     .author {
@@ -40,12 +41,11 @@
     }
 }
 @media only screen and (min-width: 1024px) {
-    .card{
-        width:40%;
+    .card {
+        width: 40%;
         padding: 40px 50px;
-
     }
-     .text{
+    .text {
         font-size: 20px;
     }
 }
@@ -53,5 +53,4 @@
     .card {
         width: 29.296875vw;
     }
-
 }

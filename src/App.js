@@ -3,7 +3,7 @@ import QuoteCard from './components/QuoteCard';
 
 function App() {
   return (
-    <div className="App bg-indigo-500 min-h-screen">
+    <div className="App" >
       <QuoteCard />
     </div>
   );
